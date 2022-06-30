@@ -1,4 +1,4 @@
 function squares(array) {
-    var result = array.map(function (x) { return x * x; });
+    const result = array.map((x) => x * x);
     return result;
 }
