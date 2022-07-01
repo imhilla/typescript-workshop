@@ -7,6 +7,7 @@ enum Operator {
 
 type Operation = (x: number, y: number) => number;
 const operations: [Operator, Operation][] = [];
+
 const add = function (first: number, second: number) {
   return first + second;
 };
@@ -24,6 +25,7 @@ operations.push([Operator.Add, add]);
 operations.push([Operator.Substract, substract]);
 operations.push([Operator.Multiply, multiply]);
 operations.push([Operator.Divide, divide]);
+
 const calculator = function (first: number, second: number, op: Operator) {
   const tuple = operations.find((tpl) => tpl[0] === op);
   const operation = tuple[1];
