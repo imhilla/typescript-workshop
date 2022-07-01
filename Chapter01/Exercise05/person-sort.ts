@@ -4,6 +4,7 @@ interface Person {
 }
 
 let count = 0;
+
 function getFullName(person: Person) {
   count++;
   return `${person.firstName} ${person.lastName}`;
@@ -47,6 +48,7 @@ console.log(
 count = 0;
 const sortedSchwartz = schwartzSortPersons(programmers);
 console.log(sortedSchwartz);
+
 console.log(
   `When called using the Schwartzian transform approach, the function was called ${count} times`
 );
