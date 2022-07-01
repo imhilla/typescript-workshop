@@ -18,3 +18,12 @@ const programmers: Person[] = [
   { firstName: "Edsger", lastName: "Dijkstra" },
   { firstName: "Brandon", lastName: "Eich" },
 ];
+
+// naive and straight foward sorting function
+function naiveSortPersons(persons: Person[]): Person[] {
+  return persons.slice().sort((first, second) => {
+    const firstFullName = getFullName(first);
+    const secondFullName = getFullName(second);
+    return firstFullName.localeCompare(secondFullName);
+  });
+}
