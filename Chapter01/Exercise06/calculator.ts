@@ -3,6 +3,7 @@ enum Operator {
   Substract = "substract",
   Multiply = "multiply",
   Divide = "divide",
+  Modulo = "modulo",
 }
 
 type Operation = (x: number, y: number) => number;
@@ -20,11 +21,15 @@ const multiply = function (first: number, second: number) {
 const divide = function (first: number, second: number) {
   return first / second;
 };
+const modulo = function (first: number, second: number) {
+  return first % second;
+};
 
 operations.push([Operator.Add, add]);
 operations.push([Operator.Substract, substract]);
 operations.push([Operator.Multiply, multiply]);
 operations.push([Operator.Divide, divide]);
+operations.push([Operator.Modulo, modulo]);
 
 const calculator = function (first: number, second: number, op: Operator) {
   const tuple = operations.find((tpl) => tpl[0] === op);
@@ -37,3 +42,4 @@ console.log(calculator(4, 6, Operator.Add));
 console.log(calculator(13, 3, Operator.Substract));
 console.log(calculator(2, 5, Operator.Multiply));
 console.log(calculator(70, 7, Operator.Divide));
+console.log(calculator(14, 3, Operator.Modulo));
