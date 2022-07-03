@@ -24,3 +24,13 @@ var countWords = function (words) {
 console.log(countWords("War and Peace"));
 console.log(countWords("catcher-in-the-rye"));
 console.log(countWords("for_whom the-bell-tolls"));
+var toWords = function (words) {
+    var splittedWords = words.split(/[ _-]/);
+    return splittedWords;
+};
+// "War and Peace" => [War, and, peace]
+// "catcher-in-the-rye" => [catcher, in, the, rye]
+// "for_whom the-bell-tolls"=> [for, whom, the, bell, tolls]
+console.log(toWords("War and Peace"));
+console.log(toWords("catcher-in-the-rye"));
+console.log(toWords("for_whom the-bell-tolls"));
