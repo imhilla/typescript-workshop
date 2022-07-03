@@ -34,3 +34,18 @@ var toWords = function (words) {
 console.log(toWords("War and Peace"));
 console.log(toWords("catcher-in-the-rye"));
 console.log(toWords("for_whom the-bell-tolls"));
+var repeat = function (word, times) {
+    if (times === 0)
+        return "";
+    var i;
+    for (i = 1; i < times; i++) {
+        word += word;
+    }
+    return word;
+};
+// "War", 3 => "WarWarWar"
+// "rye", 1 => "rye"
+// "bell", 0 => ""
+console.log(repeat("War", 3));
+console.log(repeat("rye", 1));
+console.log(repeat("bell", 0));
