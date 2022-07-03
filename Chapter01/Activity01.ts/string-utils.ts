@@ -16,3 +16,15 @@ const toTitleCase = function (words: string): string {
 console.log(toTitleCase("war AND peace"));
 console.log(toTitleCase("Catcher in the Rye"));
 console.log(toTitleCase("tO kILL A mOCKINGBIRD"));
+
+const countWords = function (words: string): number {
+  let splittedWords = words.split(/[ _-]/);
+  return splittedWords.length;
+};
+
+// "War and Peace" => 3
+// "catcher-in-the-rye" => 4
+// "for_whom the-bell-tolls" => 5
+console.log(countWords("War and Peace"));
+console.log(countWords("catcher-in-the-rye"));
+console.log(countWords("for_whom the-bell-tolls"));
