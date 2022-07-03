@@ -49,3 +49,14 @@ var repeat = function (word, times) {
 console.log(repeat("War", 3));
 console.log(repeat("rye", 1));
 console.log(repeat("bell", 0));
+var isAlpha = function (words) {
+    var alphaRegex = /^[a-z]*$/i;
+    var result = alphaRegex.test(words);
+    return result;
+};
+// "War and Peace" => false
+// "Atonement" => true
+// "1Q84" => false
+console.log(isAlpha("War and Peace"));
+console.log(isAlpha("Atonement"));
+console.log(isAlpha("1Q84"));
