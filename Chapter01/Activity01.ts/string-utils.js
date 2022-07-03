@@ -1,8 +1,8 @@
-const toTitleCase = function (words: string): string {
-  let newWord = words.split(" ");
-  let changedWords: string[] = [];
-  newWord.map((word) => {
-    let slicedword = word.slice(0, 1);
+var toTitleCase = function (words) {
+  var newWord = words.split(" ");
+  var changedWords = [];
+  newWord.map(function (word) {
+    var slicedword = word.slice(0, 1);
     changedWords.push(
       slicedword.toUpperCase() + word.slice(1, word.length).toLowerCase()
     );
