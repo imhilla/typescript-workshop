@@ -1,1 +1,3 @@
-/// <reference path="./types/AuthTypes.d.ts">
+"use strict";
+exports.__esModule = true;
+var jon;
