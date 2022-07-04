@@ -67,3 +67,10 @@ const isAlpha = function (words: string): boolean {
 console.log(isAlpha("War and Peace"));
 console.log(isAlpha("Atonement"));
 console.log(isAlpha("1Q84"));
+
+const isBlank = function (words: string): boolean {
+  return true;
+};
+// "War and Peace" => false
+// "         " => true
+// "" => true
