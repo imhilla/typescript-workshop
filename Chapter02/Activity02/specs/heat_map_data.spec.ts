@@ -17,14 +17,14 @@ describe("heat map data shape", () => {
     const result = Object.keys(data).includes("coordinateMap");
     expect(result).toBe(true);
   });
-  import("should have a method called findMatch", ()={
-    let jon: hmt.Pitcher;
+  // import("should have a method called findMatch", ()={
+  //   let jon: hmt.Pitcher;
 
-    jon = {
-      batterHotZones: [[12.2, -3], [10.2, -5], [3, 2]],
-      pitcherHotZones: [[3, 2], [-12.2, 3], [-10.2, 5]]
-    }
-    const result = findMatch(jon.batterHotZones, jon.pitcherHotZones);
-    expect(result).toEqual([[3, 2]]);
-  })
+  //   jon = {
+  //     batterHotZones: [[12.2, -3], [10.2, -5], [3, 2]],
+  //     pitcherHotZones: [[3, 2], [-12.2, 3], [-10.2, 5]]
+  //   }
+  //   const result = findMatch(jon.batterHotZones, jon.pitcherHotZones);
+  //   expect(result).toEqual([[3, 2]]);
+  // })
 });
