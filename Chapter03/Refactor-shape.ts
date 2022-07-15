@@ -22,40 +22,44 @@ interface rightTriangle extends Shape {
   type: "rightTriangle";
 }
 
-interface Square extends Shape{
+interface Square extends Shape {
   type: "square";
   width: number;
 }
 
-function getCircleArea(radius) {
+function getCircleArea(circle: Circle): number {
+  const { radius } = circle;
   return radius * radius * PI;
 }
 
-function getRectangleArea(length, width) {
+function getRectangleArea(rectangle: Rectangle): number {
+  const { length, width } = rectangle;
   return length * width;
 }
 
-function getSquareArea(width) {
-  return getRectangleArea(width, width);
+function getSquareArea(square: Square): number {
+  const { width } = square;
+  return getRectangleArea({ length: width, type: "rectangle", width });
 }
 
-function getRightTriangleArea(base, height) {
+function getRightTriangleArea(rightTriangle: rightTriangle) {
+  const { base, height } = rightTriangle;
   return (base * height) / 2;
 }
 
 function getArea(shape) {
   switch (shape.type) {
     case "circle":
-      shape.area = getCircleArea(shape.radius);
+      shape.area = getCircleArea(shape as Circle);
       break;
     case "rectangle":
-      shape.area = getRectangleArea(shape.length, shape.width);
+      shape.area = getRectangleArea(shape as Rectangle);
       break;
     case "square":
-      shape.area = getSquareArea(shape.width);
+      shape.area = getSquareArea(shape as Square);
       break;
     case "rightTriangle":
-      shape.area = getRightTriangleArea(shape.base, shape.height);
+      shape.area = getRightTriangleArea(shape as rightTriangle);
       break;
   }
 }
