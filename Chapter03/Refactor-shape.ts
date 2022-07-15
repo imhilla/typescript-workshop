@@ -47,7 +47,7 @@ function getRightTriangleArea(rightTriangle: rightTriangle) {
   return (base * height) / 2;
 }
 
-function getArea(shape) {
+function getArea(shape: Shape) {
   switch (shape.type) {
     case "circle":
       shape.area = getCircleArea(shape as Circle);
@@ -64,18 +64,23 @@ function getArea(shape) {
   }
 }
 
-const circle = { type: "circle", radius: 4 };
+const circle: Circle = { type: "circle", radius: 4 };
 getArea(circle);
 console.log(circle);
 
-const rectangle = { type: "rectangle", length: 7, width: 4 };
+const rectangle: Rectangle = { type: "rectangle", length: 7, width: 4 };
 getArea(rectangle);
 console.log(rectangle);
 
-const square = { type: "square", width: 5 };
+const square: Square = { type: "square", width: 5 };
 getArea(square);
 console.log(square);
 
-const rightTriangle = { type: "rightTriangle", base: 9, height: 4 };
+const rightTriangle: rightTriangle = {
+  type: "rightTriangle",
+  base: 9,
+  height: 4,
+};
+
 getArea(rightTriangle);
 console.log(rightTriangle);
