@@ -1,6 +1,13 @@
 "use strict";
 exports.__esModule = true;
-exports.Team = void 0;
+var Scoreboard = /** @class */ (function () {
+    function Scoreboard(args) {
+        this.homeTean = args.homeTean;
+        this.awayTeam = args.awayTeam;
+        this.date = args.date;
+    }
+    return Scoreboard;
+}());
 var Team = /** @class */ (function () {
     function Team(players) {
         this.players = players;
@@ -13,6 +20,5 @@ var Team = /** @class */ (function () {
     };
     return Team;
 }());
-exports.Team = Team;
 var astros = new Team(["Jacob", "Peter"]);
 console.log(astros.generateLineup());
