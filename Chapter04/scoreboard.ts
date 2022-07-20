@@ -1,14 +1,15 @@
 export class Team {
-  name: string;
   players: string[];
-  constructor(name: string, players: string[]) {
-    this.name = name;
+  constructor(players) {
     this.players = players;
   }
-  generateLineup() {
-    return "Lineup will go here.";
+  generateLineup(): string {
+    const playersWithOrderNumber = this.players.map((player, idx) => {
+      return `<div>${idx + 1} - ${player}</div>`;
+    });
+    return playersWithOrderNumber.join(" ");
   }
 }
 
-const astros = new Team("hillary", [""]);
+const astros = new Team(["Jacob", "Peter"]);
 console.log(astros.generateLineup());
