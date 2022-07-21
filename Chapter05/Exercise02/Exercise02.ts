@@ -37,3 +37,7 @@ let post3: BlogPost = {
   timeStamp: (12345678).toString(),
   user: "Will",
 };
+
+blog.addToPost(post1);
+blog.addToPost(post2);
+blog.addToPost(post3);
