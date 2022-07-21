@@ -4,7 +4,13 @@ interface ProductTemplate {
   color: string;
 }
 
-export const productMaker = (product: ProductTemplate) => {
+interface productInterfaceFunction {
+  (product: ProductTemplate): ProductTemplate;
+}
+
+export const productMaker: productInterfaceFunction = (
+  product: ProductTemplate
+): ProductTemplate => {
   return product;
 };
 
