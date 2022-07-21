@@ -25,3 +25,6 @@ const product: ProductTemplate = {
   width: 100,
   color: "blue",
 };
+
+const newProduct = new ProductClass(product);
+console.log(newProduct.product);
