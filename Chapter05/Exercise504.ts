@@ -42,3 +42,12 @@ class Inventory extends User {
     this.products = products;
   }
 }
+
+class FloorWorker extends Inventory {
+  floorStock: string[] = [];
+  checkOut(id: number) {
+    if (this.products.length >= 0) {
+      this.floorStock.push(this.products[id]);
+    }
+  }
+}
