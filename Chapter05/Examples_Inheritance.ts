@@ -20,3 +20,17 @@ class AdminUser extends UserOne {
     return "password123";
   }
 }
+
+class SuperAdmin extends AdminUser {
+  superPages: string[] = ["super", "Ultimate"];
+  createAdminUser(adminUser: AdminUser): AdminUser {
+    return adminUser;
+  }
+}
+
+const adminUser: AdminUser = new AdminUser();
+let propString = "";
+for (let u in adminUser) {
+  propString += u + ",";
+}
+console.log(propString, "propString");
