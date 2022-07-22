@@ -21,6 +21,17 @@ class AdminUser extends UserOne {
   }
 }
 
+class AdminUserTwo extends UserOne {
+  constructor(email: string) {
+    super();
+    this.email = email;
+  }
+  adminPages: string[] = ["admin", "settings"];
+  resetUserPassword(): string {
+    return "password123";
+  }
+}
+
 class SuperAdmin extends AdminUser {
   superPages: string[] = ["super", "Ultimate"];
   readonly myHash: string;
@@ -40,8 +51,13 @@ class SuperAdmin extends AdminUser {
 }
 
 const adminUser: AdminUser = new AdminUser();
+const superAdmin: SuperAdmin = new SuperAdmin();
+const newAdmin = new AdminUser();
+const addminUserTwo = new AdminUserTwo("hillary@gmail.com");
 let propString = "";
 for (let u in adminUser) {
   propString += u + ",";
 }
-console.log(propString, "propString");
+// console.log(propString, "propString");
+console.log(superAdmin.resetPassword("iampassword"));
+console.log(newAdmin.resetPassword("iampassword"));
