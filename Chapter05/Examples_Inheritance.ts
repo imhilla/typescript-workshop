@@ -23,8 +23,19 @@ class AdminUser extends UserOne {
 
 class SuperAdmin extends AdminUser {
   superPages: string[] = ["super", "Ultimate"];
+  readonly myHash: string;
+
+  constructor() {
+    super();
+    this.myHash = "1234567";
+  }
+
   createAdminUser(adminUser: AdminUser): AdminUser {
     return adminUser;
+  }
+
+  resetPassword(password: string): string {
+    return password + this.myHash;
   }
 }
 
