@@ -5,6 +5,9 @@ type Product = {
   price: number;
   amount: number;
 };
+//type literal
+type Yes = "yes";
+type One = 1;
 
 const products_list: Product[] = [];
 
