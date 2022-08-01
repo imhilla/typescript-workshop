@@ -1,10 +1,15 @@
 interface ErrorMessage {
   [msg: number]: string;
-  apiId: number;
+  apiId?: number;
 }
 
 const errorMessage: ErrorMessage = {
-  0: "System Error",
-  1: "overload",
-  apiId: 1234,
+  400: "Bad request",
+  401: "Unauthorized",
+  403: "Forbidden",
 };
+
+const errorCodes: number[] = [400, 401, 403];
+errorCodes.forEach((code: number) => {
+  errorMessage[code];
+});
