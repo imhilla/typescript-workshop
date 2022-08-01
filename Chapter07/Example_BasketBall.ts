@@ -21,12 +21,37 @@ class BasketBallGame {
     return `${this.team1.score}: ${this.team2.score}`;
   }
   updateScore(byPoints: number, updateTeam1: boolean) {
-    if (updateTeam1) {
-      this.team1.score += byPoints;
+    audit("updateScore", byPoints, updateTeam1);
+    const start = Date.now();
+    if (isAuthorized()) {
+      if (validatePoints(byPoints)) {
+        if (updateTeam1) {
+          this.team1.score += byPoints;
+        } else {
+          this.team2.score += byPoints;
+        }
+      } else {
+        console.log(`Invalid point value ${byPoints}`);
+      }
     } else {
-      this.team2.score += byPoints;
+      console.log("You're not authorized to change the score");
     }
+    const end = Date.now();
+    wrapWithDuration("updateScore", start, end);
   }
+}
+
+function wrapWithDuration(method: Function) {
+  const result = {
+    [method.name]: function (this: any, ...args: any[]) {
+      const start = Date.now();
+      const result = method.apply(this, args);
+      const end = Date.now();
+      logDuration(method.name, start, end);
+      return result;
+    },
+  };
+  return result[method.name];
 }
 
 const game = new BasketBallGame("LA Lakers", "Boston Celtics");
