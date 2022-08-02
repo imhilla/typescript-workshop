@@ -21,3 +21,8 @@ class Set<T> {
     }
   }
 }
+
+const set = new Set<number>([1, 2, 3, 4, 5]);
+set.add(1);
+
+// set.add("hello"); //wrong
