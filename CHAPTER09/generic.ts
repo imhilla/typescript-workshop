@@ -20,9 +20,10 @@ async function fetchJson<T>(url: string): Promise<FetchResponse<T>> {
     title: string;
     completed: boolean;
   }
-  const { data } = await fetchJson<Todo>(
+  const response = await fetchJson<Todo>(
     "https://jsonplaceholder.typicode.com/todos/1"
   );
 
-  console.log(data);
+  const todo = response.data as Todo;
+  console.log(todo);
 })();
